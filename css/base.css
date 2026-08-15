@@ -1,0 +1,122 @@
+/* =============================================================
+ * YogaSphere - Custom Tailwind Base Overrides & Animations
+ * ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  --bg: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-alt: #F8FAFC;
+  --border-color: #E2E8F0;
+  --text: #0F172A;
+  --text-muted: #64748B;
+  --primary: #7C3AED;        /* Violet Accent */
+  --primary-light: #F5F3FF;   /* Soft Lavender */
+  --radius-md: 1.5rem;
+  --radius-sm: 0.5rem;
+  --radius-full: 9999px;
+  --transition: all 0.3s ease;
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --success: #10B981;
+  --danger: #EF4444;
+}
+.dark {
+  --bg: #090A0F;
+  --bg-card: #11131E;
+  --bg-alt: #0D0E16;
+  --border-color: #1F2235;
+  --text: #F8FAFC;
+  --text-muted: #94A3B8;
+  --primary-light: #1F193B;   /* Dark Violet Tint */
+}
+
+/* Typography fallbacks */
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: #DDD6FE;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #2E2A47;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* RTL mirrors */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* Horizontal Scrolling Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+}
+
+/* Slow bounce for hero mockups */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+/* Wobble rotation for error SVG */
+@keyframes wobble {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+
+.animate-wobble {
+  animation: wobble 4s ease-in-out infinite;
+}
+
+/* Details FAQ accordion customizations */
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* Dark mode theme baseline overrides */
+.dark body {
+  background-color: #090A0F !important;
+  color: #F8FAFC !important;
+}
+
+/* Active navigation indicators */
+.nav-active {
+  color: var(--primary) !important;
+  border-bottom: 2px solid var(--primary);
+}
+
+.home-active {
+  color: var(--primary) !important;
+}

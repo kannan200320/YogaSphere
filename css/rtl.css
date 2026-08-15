@@ -1,0 +1,84 @@
+/* =============================================================
+ * RTL (Right-to-Left) Stylesheet overrides
+ * ============================================================= */
+
+[dir="rtl"] {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+/* RTL Text Alignment Defaults */
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* Navigation Drawer Override */
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%) translateY(10px);
+}
+
+[dir="rtl"] .nav-item-dropdown:hover .dropdown-menu {
+  transform: translateX(50%) translateY(0);
+}
+
+@media (max-width: 992px) {
+  [dir="rtl"] .nav-menu {
+    left: auto;
+    right: -100%;
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+  }
+  
+  [dir="rtl"] .nav-menu.open {
+    right: 0;
+    left: auto;
+  }
+}
+
+/* Pricing features and list bullets */
+[dir="rtl"] .pricing-features li::before {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Icon directions */
+[dir="rtl"] .btn-arrow svg {
+  transform: scaleX(-1);
+}
+
+/* Form input adjustments */
+[dir="rtl"] .form-control {
+  text-align: right;
+}
+
+/* Dashboard Sidebar RTL */
+[dir="rtl"] .dash-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .dash-menu-item svg {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}
+
+[dir="rtl"] .dash-stat-trend svg {
+  transform: scaleX(-1);
+}
+
+/* Float or margins */
+[dir="rtl"] .mr-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+
+[dir="rtl"] .ml-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}

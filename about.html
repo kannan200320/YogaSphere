@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | YogaSphere Studio & Wellness Centre</title>
+  <meta name="description" content="Discover our history, mission, values, and premium studio facilities at YogaSphere. Meet the team guiding your practice.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            violet: {
+              50: '#F6F5F9', // Dimmed white background
+              100: '#EAE7F5',
+              200: '#D5CFED',
+              300: '#C0B7E5',
+              400: '#A697DB',
+              500: '#7E69CC',
+              600: '#6355B7', // Dimmed elegant violet
+              700: '#5245A0',
+              850: '#44388A',
+              900: '#342B6B',
+            },
+            slatecharcoal: '#0F0E13',
+            alabaster: '#FFFFFF',
+            offwhite: '#F6F5F9',
+            lightgrey: '#F1F1F4',
+            mediumgrey: '#94A3B8',
+            darkgrey: '#374151'
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link class="icon-pack-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script>
+    if (localStorage.getItem("darkModeEnabled") === "true") {
+      document.documentElement.classList.add("dark");
+    }
+    if (localStorage.getItem("rtlEnabled") === "true") {
+      document.documentElement.dir = "rtl";
+    }
+  </script>
+</head>
+<body class="font-sans bg-violet-50 text-slate-900 dark:bg-slatecharcoal dark:text-slate-100 transition-all duration-300">
+
+  <!-- Dynamic Navigation Bar -->
+  <div id="navbar"></div>
+
+  <!-- Page Header Banner -->
+  <section class="pt-36 pb-20 bg-violet-50 dark:bg-slate-950/20 text-center transition-colors">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-semibold text-slate-900 dark:text-white font-serif">Our Story</h1>
+      <p class="text-slate-550 dark:text-slate-400 mt-2 font-sans text-base max-w-lg mx-auto leading-relaxed">
+        A sanctuary dedicated to your holistic well-being since 2015.
+      </p>
+    </div>
+  </section>
+
+  <!-- History & Split Details -->
+  <section class="py-24 bg-violet-50 dark:bg-slatecharcoal transition-colors relative overflow-hidden">
+    <!-- Yogi silhouette watermark -->
+    <div class="absolute right-[-2%] bottom-[-5%] w-[320px] h-[320px] pointer-events-none select-none text-slate-400/20 dark:text-violet-500/20 z-0">
+      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.4" class="w-full h-full">
+        <circle cx="50" cy="25" r="7" />
+        <path d="M50 32 L50 65" />
+        <path d="M50 35 C42 35, 30 40, 30 55 C30 65, 40 70, 50 70 C60 70, 70 65, 70 55 C70 40, 58 35, 50 35 Z" />
+        <path d="M42 66 C45 68, 55 68, 58 66" />
+        <path d="M20 75 C20 75, 25 65, 38 65 C43 65, 45 70, 50 70 C55 70, 57 65, 62 65 C75 65, 80 75, 80 75 C80 75, 70 82, 50 82 C30 82, 20 75, 20 75 Z" />
+        <circle cx="50" cy="25" r="1.5" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="36" r="1.2" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="44" r="1.2" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="52" r="1.2" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="60" r="1.2" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="68" r="1.2" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="76" r="1.2" fill="currentColor" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-16 border-b border-lightgrey dark:border-slate-800 pb-16">
+        <div class="lg:col-span-6 rounded-3xl overflow-hidden shadow-xl border border-slate-205 dark:border-slate-850">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Yoga practice sanctuary" class="w-full object-cover aspect-[4/3] md:aspect-[16/10]">
+        </div>
+        <div class="lg:col-span-6 space-y-6">
+          <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white font-serif">A Space for Transformation</h2>
+          <p class="text-slate-505 dark:text-slate-400 leading-relaxed font-sans text-sm md:text-base">
+            Founded in 2015, YogaSphere was born from a simple desire: to create an inclusive, calming space where people from all walks of life could come to find balance. Our founder, Maya Lin, envisioned a studio that went beyond physical fitness, focusing equally on mental clarity and spiritual growth.
+          </p>
+          <p class="text-slate-505 dark:text-slate-400 leading-relaxed font-sans text-sm md:text-base">
+            Over the years, our small community has grown into a vibrant family. We've expanded our class offerings, but our core ethos remains the same: practice with intention, live with compassion.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mission, Vision, Values Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Mission -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col items-center text-center space-y-4 shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300">
+          <div class="text-violet-650 dark:text-violet-400 text-3xl">
+            <i class="bi bi-heart-fill text-violet-600"></i>
+          </div>
+          <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white">Our Mission</h4>
+          <p class="text-xs text-slate-505 dark:text-slate-400 leading-relaxed">
+            To empower individuals on their wellness journey through expert guidance, mindful movement, and supportive community.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col items-center text-center space-y-4 shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300">
+          <div class="text-violet-650 dark:text-violet-400 text-3xl">
+            <i class="bi bi-eye-fill text-violet-600"></i>
+          </div>
+          <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white">Our Vision</h4>
+          <p class="text-xs text-slate-505 dark:text-slate-400 leading-relaxed">
+            A world where physical and mental well-being is accessible to everyone, fostering global peace starting from within.
+          </p>
+        </div>
+
+        <!-- Values -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col items-center text-center space-y-4 shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300">
+          <div class="text-violet-650 dark:text-violet-400 text-3xl">
+            <i class="bi bi-people-fill text-violet-600"></i>
+          </div>
+          <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white">Our Values</h4>
+          <p class="text-xs text-slate-505 dark:text-slate-400 leading-relaxed">
+            Inclusivity, compassion, continuous learning, and respect for the ancient traditions of yoga.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities Grid -->
+  <section class="py-24 bg-violet-50 dark:bg-slate-900/10 border-t border-b border-lightgrey dark:border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-6 text-center space-y-16">
+      <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white font-serif">Studio Facilities</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 font-sans">
+        <!-- 1 -->
+        <div class="group bg-white/40 dark:bg-[#11131E]/20 border border-slate-200/40 dark:border-slate-800/40 hover:bg-white dark:hover:bg-[#11131E] hover:border-slate-200 dark:hover:border-slate-800 p-6 rounded-2xl hover:shadow-[0_10px_25px_rgba(99,85,183,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer text-center">
+          <div class="text-violet-600 dark:text-violet-400 text-3xl mb-3 transition-transform duration-300 group-hover:scale-115 group-hover:rotate-12 inline-block"><i class="bi bi-wind"></i></div>
+          <h6 class="font-bold text-xs md:text-sm text-slate-900 dark:text-white">Air Purified Rooms</h6>
+        </div>
+        <!-- 2 -->
+        <div class="group bg-white/40 dark:bg-[#11131E]/20 border border-slate-200/40 dark:border-slate-800/40 hover:bg-white dark:hover:bg-[#11131E] hover:border-slate-200 dark:hover:border-slate-800 p-6 rounded-2xl hover:shadow-[0_10px_25px_rgba(99,85,183,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer text-center">
+          <div class="text-violet-600 dark:text-violet-400 text-3xl mb-3 transition-transform duration-300 group-hover:scale-115 group-hover:rotate-12 inline-block"><i class="bi bi-water"></i></div>
+          <h6 class="font-bold text-xs md:text-sm text-slate-900 dark:text-white">Eco-Showers</h6>
+        </div>
+        <!-- 3 -->
+        <div class="group bg-white/40 dark:bg-[#11131E]/20 border border-slate-200/40 dark:border-slate-800/40 hover:bg-white dark:hover:bg-[#11131E] hover:border-slate-200 dark:hover:border-slate-800 p-6 rounded-2xl hover:shadow-[0_10px_25px_rgba(99,85,183,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer text-center">
+          <div class="text-violet-600 dark:text-violet-400 text-3xl mb-3 transition-transform duration-300 group-hover:scale-115 group-hover:rotate-12 inline-block"><i class="bi bi-layers-half"></i></div>
+          <h6 class="font-bold text-xs md:text-sm text-slate-900 dark:text-white">Premium Mats</h6>
+        </div>
+        <!-- 4 -->
+        <div class="group bg-white/40 dark:bg-[#11131E]/20 border border-slate-200/40 dark:border-slate-800/40 hover:bg-white dark:hover:bg-[#11131E] hover:border-slate-200 dark:hover:border-slate-800 p-6 rounded-2xl hover:shadow-[0_10px_25px_rgba(99,85,183,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer text-center">
+          <div class="text-violet-600 dark:text-violet-400 text-3xl mb-3 transition-transform duration-300 group-hover:scale-115 group-hover:rotate-12 inline-block"><i class="bi bi-lock-fill"></i></div>
+          <h6 class="font-bold text-xs md:text-sm text-slate-900 dark:text-white">Secure Lockers</h6>
+        </div>
+        <!-- 5 -->
+        <div class="group bg-white/40 dark:bg-[#11131E]/20 border border-slate-200/40 dark:border-slate-800/40 hover:bg-white dark:hover:bg-[#11131E] hover:border-slate-200 dark:hover:border-slate-800 p-6 rounded-2xl hover:shadow-[0_10px_25px_rgba(99,85,183,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer text-center">
+          <div class="text-violet-600 dark:text-violet-400 text-3xl mb-3 transition-transform duration-300 group-hover:scale-115 group-hover:rotate-12 inline-block"><i class="bi bi-cup-hot-fill"></i></div>
+          <h6 class="font-bold text-xs md:text-sm text-slate-900 dark:text-white">Organic Tea Bar</h6>
+        </div>
+        <!-- 6 -->
+        <div class="group bg-white/40 dark:bg-[#11131E]/20 border border-slate-200/40 dark:border-slate-800/40 hover:bg-white dark:hover:bg-[#11131E] hover:border-slate-200 dark:hover:border-slate-800 p-6 rounded-2xl hover:shadow-[0_10px_25px_rgba(99,85,183,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer text-center">
+          <div class="text-violet-600 dark:text-violet-400 text-3xl mb-3 transition-transform duration-300 group-hover:scale-115 group-hover:rotate-12 inline-block"><i class="bi bi-wifi"></i></div>
+          <h6 class="font-bold text-xs md:text-sm text-slate-900 dark:text-white">Free Wi-Fi</h6>
+        </div>
+        <!-- 7 -->
+        <div class="group bg-white/40 dark:bg-[#11131E]/20 border border-slate-200/40 dark:border-slate-800/40 hover:bg-white dark:hover:bg-[#11131E] hover:border-slate-200 dark:hover:border-slate-800 p-6 rounded-2xl hover:shadow-[0_10px_25px_rgba(99,85,183,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer text-center">
+          <div class="text-violet-600 dark:text-violet-400 text-3xl mb-3 transition-transform duration-300 group-hover:scale-115 group-hover:rotate-12 inline-block"><i class="bi bi-p-circle-fill"></i></div>
+          <h6 class="font-bold text-xs md:text-sm text-slate-900 dark:text-white">Free Parking</h6>
+        </div>
+        <!-- 8 -->
+        <div class="group bg-white/40 dark:bg-[#11131E]/20 border border-slate-200/40 dark:border-slate-800/40 hover:bg-white dark:hover:bg-[#11131E] hover:border-slate-200 dark:hover:border-slate-800 p-6 rounded-2xl hover:shadow-[0_10px_25px_rgba(99,85,183,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer text-center">
+          <div class="text-violet-600 dark:text-violet-400 text-3xl mb-3 transition-transform duration-300 group-hover:scale-115 group-hover:rotate-12 inline-block"><i class="bi bi-bag-check-fill"></i></div>
+          <h6 class="font-bold text-xs md:text-sm text-slate-900 dark:text-white">Retail Boutique</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="py-12 bg-violet-50 dark:bg-slatecharcoal text-center transition-colors">
+    <div class="max-w-4xl mx-auto px-6">
+      <h4 class="text-slate-400 dark:text-slate-500 uppercase tracking-widest text-xs font-bold mb-6">Certifications & Affiliations</h4>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-50 dark:opacity-40">
+        <span class="font-bold text-base tracking-wider uppercase flex items-center gap-2"><i class="bi bi-patch-check-fill text-violet-600 dark:text-violet-400"></i> Yoga Alliance</span>
+        <span class="font-bold text-base tracking-wider uppercase flex items-center gap-2"><i class="bi bi-award-fill text-violet-600 dark:text-violet-400"></i> RYT 500</span>
+        <span class="font-bold text-base tracking-wider uppercase flex items-center gap-2"><i class="bi bi-tree-fill text-violet-600 dark:text-violet-400"></i> Eco Studio</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-16 bg-violet-50 dark:bg-slatecharcoal transition-colors">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="bg-violet-600 dark:bg-violet-900/60 rounded-[3rem] p-12 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle,white_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-semibold mb-4 relative z-10 font-serif">Start Your Free Trial Today</h2>
+        <p class="text-violet-100 mb-8 max-w-xl mx-auto relative z-10 text-sm md:text-base leading-relaxed">
+          Experience the benefits of regular practice. First 7 days are on us.
+        </p>
+        <div class="relative z-10">
+          <a href="register.html" class="inline-block bg-white text-violet-600 hover:bg-slate-50 px-10 py-4 rounded-2xl font-bold shadow-xl transition-all transform hover:scale-105 text-sm">
+            Join Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Footer Block -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

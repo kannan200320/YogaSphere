@@ -1,0 +1,30 @@
+# Task List - Yoga Studio & Wellness Centre (Tailwind Edition)
+
+- [x] Initialize directory structure & generate assets
+- [x] Build global navigation & footer scripts
+  - [x] Create `navbar.js` (dynamic sticky nav with dropdown, theme/RTL controls)
+  - [x] Create `footer.js` (dynamic 4-column footer, social icons, auto-year)
+  - [x] Rewrite `css/base.css` (Tailwind custom overrides, scrolling brand marquee)
+  - [x] Rewrite `js/main.js` (nav integration, local-storage states)
+- [x] Implement redesigned HTML pages using Tailwind CSS
+  - [x] `index.html` (Home 1 - advanced split design, brand marquee loop)
+  - [x] `home-app.html` (Home 2 - premium SaaS product features)
+  - [x] `about.html` (mission, history timeline, team cards)
+  - [x] `services.html` (grid of 15 services with categories filters)
+  - [x] `service-details.html` (spec sidebar, details, FAQ accordion)
+  - [x] `pricing.html` (pricing toggler, comparative table)
+  - [x] `blog.html` (live article search, category tags)
+  - [x] `blog-details.html` (article, widgets sidebar, comments thread)
+  - [x] `contact.html` (validated form, SVG location map)
+  - [x] `login.html` (interactive login/register tabs switcher)
+  - [x] `404.html` (wobbly animated tree-pose error)
+  - [x] `coming-soon.html` (maintenance panel, live countdown clock)
+- [x] Refine the interactive Dashboard
+  - [x] `dashboard.html` (modernized layout, stats cards, widgets grid)
+  - [x] `js/dashboard.js` (timetable, SVG check-ins charts, renewal modal)
+  - [x] `css/dashboard.css` (dashboard custom panel styles)
+- [x] Verification & Walkthrough Update
+  - [x] Test mobile navigation drawer & dropdowns
+  - [x] Validate theme toggles & LTR/RTL layouts
+  - [x] Check booking engine decrement/increment math
+  - [x] Update `walkthrough.md`

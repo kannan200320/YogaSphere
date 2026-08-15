@@ -1,0 +1,569 @@
+/* =============================================================
+ * Dashboard Specific Styles (Member & Admin)
+ * ============================================================= */
+
+.dash-container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+/* -------------------------------------------------------------
+ * 1. Sidebar Styles
+ * ------------------------------------------------------------- */
+.dash-sidebar {
+  background-color: var(--bg-card);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dash-brand {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dash-menu {
+  list-style: none;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.dash-menu-item a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.dash-menu-item a svg {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.dash-menu-item.active a,
+.dash-menu-item a:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.dash-menu-item.logout {
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* -------------------------------------------------------------
+ * 2. Main Viewport & Header
+ * ------------------------------------------------------------- */
+.dash-main {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.dash-header {
+  height: 80px;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+/* Unified Role Switcher Toggle */
+.role-switcher-wrapper {
+  display: flex;
+  background-color: var(--bg-alt);
+  padding: 0.35rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+}
+
+.role-btn {
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.4rem 1.25rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.role-btn.active {
+  background-color: var(--bg-card);
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.dash-user-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dash-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+
+.dash-user-info h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.dash-user-info span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* -------------------------------------------------------------
+ * 3. Content Sections
+ * ------------------------------------------------------------- */
+.dash-content {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+/* Role panel toggle visibility */
+.role-panel {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.role-panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Stat Grid */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stat-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.stat-icon {
+  font-size: 1.25rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-footer {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.stat-trend {
+  font-weight: 700;
+}
+
+.stat-trend.up { color: var(--success); }
+.stat-trend.down { color: var(--danger); }
+
+/* Double Column grids for Charts & Tables */
+.dash-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dash-row-equal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dash-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.dash-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------------------------------
+ * 4. Interactive Timetable (Member Portal)
+ * ------------------------------------------------------------- */
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.day-filters {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  list-style: none;
+}
+
+.day-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.day-btn.active,
+.day-btn:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.booking-slots-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.booking-slot-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.booking-slot-card:hover {
+  background-color: var(--bg-card);
+  border-color: var(--primary);
+}
+
+.slot-details h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.slot-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* -------------------------------------------------------------
+ * 5. Dashboard Charts (Custom SVG layouts)
+ * ------------------------------------------------------------- */
+.chart-container {
+  height: 250px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 1.5rem 0 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+  border-left: 2px solid var(--border-color);
+}
+
+/* Bar Chart styling */
+.chart-bar-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.chart-bar {
+  width: 32px;
+  background-color: var(--primary);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: height 1s ease-in-out;
+  position: relative;
+}
+
+.chart-bar:hover {
+  background-color: var(--secondary);
+}
+
+.chart-bar-val {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.chart-label {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* -------------------------------------------------------------
+ * 6. Inbox / Messages Grid (Admin Panel)
+ * ------------------------------------------------------------- */
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.message-item {
+  padding: 1.25rem;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.message-item:hover,
+.message-item.active {
+  background-color: var(--bg-card);
+  border-color: var(--primary);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.message-sender {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.message-subject {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.message-snippet {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* -------------------------------------------------------------
+ * 7. Modals (Renewal system simulation)
+ * ------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 450px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  animation: modalSlideUp 0.3s ease;
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+/* -------------------------------------------------------------
+ * Responsive Layout Overrides
+ * ------------------------------------------------------------- */
+.menu-trigger {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .dash-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .dash-sidebar {
+    position: fixed;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .dash-sidebar.open {
+    transform: translateX(260px);
+  }
+  
+  [dir="rtl"] .dash-sidebar {
+    left: auto;
+    right: -260px;
+  }
+  
+  [dir="rtl"] .dash-sidebar.open {
+    transform: translateX(-260px);
+  }
+
+  .menu-trigger {
+    display: flex;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text);
+    padding: 0.5rem;
+  }
+  
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .dash-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .dash-row-equal {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+  .dash-header {
+    padding: 0 1rem;
+  }
+  .dash-content {
+    padding: 1rem;
+  }
+}

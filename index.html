@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YogaSphere | Premium Yoga & Meditation Sanctuary</title>
+  <meta name="description" content="Discover balance, strength, and inner peace with our expert-led yoga and meditation classes at YogaSphere. First class on us.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            violet: {
+              50: '#F6F5F9', // Dimmed white background
+              100: '#EAE7F5',
+              200: '#D5CFED',
+              300: '#C0B7E5',
+              400: '#A697DB',
+              500: '#7E69CC',
+              600: '#6355B7', // Dimmed elegant violet
+              700: '#5245A0',
+              850: '#44388A',
+              900: '#342B6B',
+            },
+            slatecharcoal: '#0F0E13',
+            alabaster: '#FFFFFF',
+            offwhite: '#F6F5F9',
+            lightgrey: '#F1F1F4',
+            mediumgrey: '#94A3B8',
+            darkgrey: '#374151'
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link class="icon-pack-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script>
+    if (localStorage.getItem("darkModeEnabled") === "true") {
+      document.documentElement.classList.add("dark");
+    }
+    if (localStorage.getItem("rtlEnabled") === "true") {
+      document.documentElement.dir = "rtl";
+    }
+  </script>
+</head>
+<body class="font-sans bg-violet-50 text-slate-900 dark:bg-slatecharcoal dark:text-slate-100 transition-all duration-300">
+
+  <!-- Dynamic Navigation Bar -->
+  <div id="navbar"></div>
+
+  <!-- Hero Section -->
+  <header class="relative min-h-screen flex items-center pt-32 pb-24 bg-violet-50 dark:bg-slatecharcoal overflow-hidden transition-all">
+    <!-- Background mudra/yoga drawing -->
+    <div class="absolute right-[-5%] top-[10%] w-[350px] h-[350px] pointer-events-none select-none text-slate-400/20 dark:text-violet-500/20 z-0">
+      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.4" class="w-full h-full">
+        <path d="M50 85 C50 85, 30 65, 30 50 C30 35, 45 30, 50 15 C55 30, 70 35, 70 50 C70 65, 50 85 Z" />
+        <path d="M50 85 C50 85, 20 70, 15 55 C10 40, 25 35, 35 45 C45 55, 50 85, 50 85 Z" />
+        <path d="M50 85 C50 85, 80 70, 85 55 C90 40, 75 35, 65 45 C55 55, 50 85, 50 85 Z" />
+        <path d="M50 85 C50 85, 10 75, 5 65 C0 55, 15 50, 25 55 C35 60, 50 85, 50 85 Z" />
+        <path d="M50 85 C50 85, 90 75, 95 65 C100 55, 85 50, 75 55 C65 60, 50 85, 50 85 Z" />
+      </svg>
+    </div>
+    <!-- Soft background decorative elements -->
+    <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-violet-100/50 dark:bg-violet-950/10 rounded-full blur-[120px] opacity-70"></div>
+    <div class="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-violet-100/50 dark:bg-violet-950/5 rounded-full blur-[100px] opacity-50"></div>
+
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10 w-full">
+      <!-- Left text info -->
+      <div class="lg:col-span-6 space-y-8 text-left">
+        <div class="space-y-4">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-100 dark:bg-violet-900/30 text-violet-750 dark:text-violet-300 rounded-full text-xs font-bold uppercase tracking-wider">
+            Welcome to YogaSphere
+          </span>
+          <h1 class="text-5xl md:text-6xl font-semibold text-slate-900 dark:text-white leading-[1.1] font-serif tracking-tight">
+            Find Your Balance,<br>
+            <span class="text-violet-600 dark:text-violet-400 font-normal italic">Restore Your Peace</span>
+          </h1>
+          <p class="text-slate-500 dark:text-slate-400 text-lg max-w-lg leading-relaxed pt-2">
+            Join our sanctuary of wellness. Experience transformative yoga and meditation classes guided by expert instructors in a calming environment.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+          <a href="classes.html" class="px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-2xl text-center shadow-lg transition-all transform hover:-translate-y-1">
+            Explore Classes <i class="bi bi-arrow-right ml-1"></i>
+          </a>
+          <a href="about.html" class="px-8 py-4 border-2 border-violet-600 text-violet-600 dark:border-violet-400 dark:text-violet-400 font-bold rounded-2xl text-center hover:bg-violet-600 hover:text-white dark:hover:bg-violet-500 dark:hover:text-slatecharcoal transition-all">
+            Discover Our Studio
+          </a>
+        </div>
+      </div>
+
+      <!-- Right image: Asymmetric overlay card layout -->
+      <div class="lg:col-span-6 relative flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-md aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 transition-all duration-300 z-10">
+          <img src="https://i.pinimg.com/1200x/17/d5/d1/17d5d1d01525ce5aeb6dc6113cdeb438.jpg" alt="Woman doing yoga" class="w-full h-full object-cover">
+        </div>
+        <!-- Decorative overlapping absolute box -->
+        <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-violet-200 dark:bg-violet-900/30 rounded-[2rem] -z-10 border border-slate-200 dark:border-slate-800"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Practices Section: Staggered/Asymmetrical Cards -->
+  <section class="py-24 bg-violet-50 dark:bg-slatecharcoal border-b border-lightgrey dark:border-slate-850/80 transition-colors relative overflow-hidden">
+    <!-- Yogi silhouette watermark -->
+    <div class="absolute left-[-2%] bottom-[-5%] w-[320px] h-[320px] pointer-events-none select-none text-slate-400/20 dark:text-violet-500/20 z-0">
+      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.4" class="w-full h-full">
+        <circle cx="50" cy="25" r="7" />
+        <path d="M50 32 L50 65" />
+        <path d="M50 35 C42 35, 30 40, 30 55 C30 65, 40 70, 50 70 C60 70, 70 65, 70 55 C70 40, 58 35, 50 35 Z" />
+        <path d="M42 66 C45 68, 55 68, 58 66" />
+        <path d="M20 75 C20 75, 25 65, 38 65 C43 65, 45 70, 50 70 C55 70, 57 65, 62 65 C75 65, 80 75, 80 75 C80 75, 70 82, 50 82 C30 82, 20 75, 20 75 Z" />
+        <circle cx="50" cy="25" r="1.5" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="36" r="1.2" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="44" r="1.2" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="52" r="1.2" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="60" r="1.2" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="68" r="1.2" fill="currentColor" opacity="0.6"/>
+        <circle cx="50" cy="76" r="1.2" fill="currentColor" opacity="0.6"/>
+      </svg>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+        <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 dark:text-white font-serif">Our Practices</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-450 leading-relaxed">
+          Discover the perfect practice for your body and mind. From dynamic flows to restorative stillness.
+        </p>
+      </div>
+
+      <!-- Asymmetrical/Staggered Card Grid Layout -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Hatha Card -->
+        <div class="group bg-white dark:bg-[#11131E] rounded-3xl border border-slate-250 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 dark:hover:border-violet-800 transition-all duration-300 flex flex-col justify-between border-slate-200/80">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://i.pinimg.com/736x/fc/02/dd/fc02dd5defc2bf8df3c9e9e4c0e42ae8.jpg" alt="Hatha Yoga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6 space-y-3">
+              <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white">Hatha Yoga</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-405 leading-relaxed">A foundational practice focusing on postures and breath control to build strength and flexibility.</p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="classes.html?style=Hatha" class="inline-flex items-center text-xs font-bold text-violet-600 hover:text-violet-500 uppercase tracking-widest gap-2">
+              View Classes <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Vinyasa Card -->
+        <div class="group bg-white dark:bg-[#11131E] rounded-3xl border border-slate-250 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 dark:hover:border-violet-800 transition-all duration-300 flex flex-col justify-between border-slate-200/80">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://i.pinimg.com/736x/79/18/d9/7918d9f95d461fd493a06faf00c6aea0.jpg" alt="Vinyasa Flow" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6 space-y-3">
+              <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white">Vinyasa Flow</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-405 leading-relaxed">A dynamic, fluid sequence linking movement with breath for a cardiovascular and mindful workout.</p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="classes.html?style=Vinyasa" class="inline-flex items-center text-xs font-bold text-violet-600 hover:text-violet-500 uppercase tracking-widest gap-2">
+              View Classes <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Yin Card -->
+        <div class="group bg-white dark:bg-[#11131E] rounded-3xl border border-slate-250 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 dark:hover:border-violet-800 transition-all duration-300 flex flex-col justify-between border-slate-200/80">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://i.pinimg.com/1200x/9a/98/24/9a98240e41fb458ecf8d63fbc3071a6d.jpg" alt="Yin Yoga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6 space-y-3">
+              <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white">Yin Yoga</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-405 leading-relaxed">A slow-paced style holding postures for longer periods, targeting deep connective tissues.</p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="classes.html?style=Yin" class="inline-flex items-center text-xs font-bold text-violet-600 hover:text-violet-500 uppercase tracking-widest gap-2">
+              View Classes <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Meditation Card -->
+        <div class="group bg-white dark:bg-[#11131E] rounded-3xl border border-slate-250 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 dark:hover:border-violet-800 transition-all duration-300 flex flex-col justify-between border-slate-200/80">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://i.pinimg.com/1200x/72/7f/88/727f88d5b15715b8143ca7bfd8433394.jpg" alt="Meditation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6 space-y-3">
+              <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white">Meditation</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-405 leading-relaxed">Guided mindfulness practices to quiet the mind, reduce stress, and improve mental clarity.</p>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="classes.html?style=Meditation" class="inline-flex items-center text-xs font-bold text-violet-600 hover:text-violet-500 uppercase tracking-widest gap-2">
+              View Classes <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom floating animation styles -->
+  <style>
+    @keyframes float-left-card {
+      0%, 100% { transform: translateY(48px) rotate(-6deg) translateX(60px); }
+      50% { transform: translateY(40px) rotate(-6.5deg) translateX(60px); }
+    }
+    @keyframes float-center-card {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes float-right-card {
+      0%, 100% { transform: translateY(-48px) rotate(6deg) translateX(-60px); }
+      50% { transform: translateY(-56px) rotate(6.5deg) translateX(-60px); }
+    }
+    .animate-float-left {
+      transform: translateY(48px) rotate(-6deg) translateX(60px);
+      animation: float-left-card 6s ease-in-out infinite;
+      z-index: 30;
+    }
+    .animate-float-center {
+      animation: float-center-card 8s ease-in-out infinite;
+      z-index: 10;
+    }
+    .animate-float-right {
+      transform: translateY(-48px) rotate(6deg) translateX(-60px);
+      animation: float-right-card 7s ease-in-out infinite;
+      z-index: 30;
+    }
+    
+    /* Pause float on hover and apply static hover transforms */
+    .animate-float-left:hover {
+      animation-play-state: paused;
+      transform: translateY(32px) rotate(-2deg) translateX(40px) scale(1.05) !important;
+      z-index: 40 !important;
+    }
+    .animate-float-center:hover {
+      animation-play-state: paused;
+      transform: translateY(-12px) scale(1.02) !important;
+      z-index: 20 !important;
+    }
+    .animate-float-right:hover {
+      animation-play-state: paused;
+      transform: translateY(-64px) rotate(2deg) translateX(-40px) scale(1.05) !important;
+      z-index: 40 !important;
+    }
+
+    /* Screen adjustment styles to prevent boundary clipping on smaller desktops */
+    @media (max-width: 1279px) {
+      .animate-float-left {
+        transform: translateY(24px) rotate(-3deg) translateX(30px) !important;
+        animation: none !important;
+        z-index: 30 !important;
+      }
+      .animate-float-right {
+        transform: translateY(-24px) rotate(3deg) translateX(-30px) !important;
+        animation: none !important;
+        z-index: 30 !important;
+      }
+      .animate-float-center {
+        animation: none !important;
+        z-index: 10 !important;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      .animate-float-left, .animate-float-right, .animate-float-center {
+        transform: none !important;
+        animation: none !important;
+        z-index: 10 !important;
+      }
+    }
+  </style>
+
+  <!-- YogaSphere App Portal Showcase Section -->
+  <section class="py-24 bg-white dark:bg-[#090A0F] border-b border-lightgrey dark:border-slate-850/80 transition-colors relative overflow-visible text-center">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+
+
+      <!-- 3D Overlapping Card Composition Container -->
+      <div class="relative w-full max-w-7xl mx-auto flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-0 lg:min-h-[560px] px-6 overflow-visible">
+        
+        <!-- 1. Left Floating Card (Packages) -->
+        <div class="w-full max-w-[320px] lg:max-w-[340px] xl:max-w-[360px] bg-white dark:bg-[#11131E] rounded-3xl border border-slate-200 dark:border-slate-800/80 shadow-lg p-5 text-left transition-all duration-500 z-30 lg:animate-float-left lg:origin-bottom-right">
+          <!-- Browser top bar -->
+          <div class="flex items-center gap-1.5 pb-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 rounded-t-2xl -mx-5 -mt-5 px-5 pt-3 mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+          </div>
+          <!-- Label -->
+          <span class="text-[9px] uppercase font-extrabold tracking-widest text-violet-600 dark:text-violet-400">Pricing</span>
+          <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white mt-1 mb-4">Packages</h4>
+          
+          <div class="space-y-4 font-sans text-xs">
+            <!-- Pkg 1 -->
+            <div class="border border-slate-100 dark:border-slate-800 p-3 rounded-2xl bg-slate-50/50 dark:bg-slate-900/30 hover:scale-[1.03] hover:border-violet-300 dark:hover:border-violet-850 hover:shadow-md transition-all duration-300 cursor-pointer">
+              <span class="text-[9px] uppercase tracking-wider font-extrabold text-slate-400">Drop-In</span>
+              <div class="flex justify-between items-baseline mt-1">
+                <span class="font-bold text-slate-850 dark:text-white">Single Class</span>
+                <span class="text-sm font-bold text-violet-600 dark:text-violet-400">$45</span>
+              </div>
+            </div>
+
+            <!-- Pkg 2 -->
+            <div class="border-2 border-violet-200 dark:border-violet-850 p-3 rounded-2xl bg-violet-50/20 dark:bg-violet-950/10 hover:scale-[1.03] hover:border-violet-405 dark:hover:border-violet-750 hover:shadow-md transition-all duration-300 cursor-pointer">
+              <span class="text-[9px] uppercase tracking-wider font-extrabold text-violet-600 dark:text-violet-400">Class Pack</span>
+              <div class="flex justify-between items-baseline mt-1">
+                <span class="font-bold text-slate-850 dark:text-white">10-Class Pack</span>
+                <span class="text-sm font-bold text-violet-600 dark:text-violet-400">$397</span>
+              </div>
+            </div>
+
+            <!-- Pkg 3 -->
+            <div class="border border-slate-100 dark:border-slate-800 p-3 rounded-2xl bg-slate-50/50 dark:bg-slate-900/30 hover:scale-[1.03] hover:border-violet-300 dark:hover:border-violet-850 hover:shadow-md transition-all duration-300 cursor-pointer">
+              <span class="text-[9px] uppercase tracking-wider font-extrabold text-slate-400">Unlimited</span>
+              <div class="flex justify-between items-baseline mt-1">
+                <span class="font-bold text-slate-850 dark:text-white">Monthly</span>
+                <span class="text-sm font-bold text-violet-600 dark:text-violet-400">$149</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Main Center Card (Dashboard) -->
+        <div class="w-full max-w-[560px] lg:max-w-[580px] xl:max-w-[620px] bg-white dark:bg-[#11131E] rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-2xl p-6 text-left transition-all duration-500 z-10 lg:animate-float-center">
+          <!-- Browser top bar -->
+          <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 rounded-t-2xl -mx-6 -mt-6 px-6 pt-3 mb-5">
+            <div class="flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+            </div>
+            <span class="text-[9px] text-slate-400 dark:text-slate-500 font-mono">yogasphere.com/dashboard</span>
+          </div>
+
+          <!-- Dashboard Header -->
+          <div class="flex items-center justify-between mt-4 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold text-sm">YS</div>
+              <div>
+                <span class="text-[9px] uppercase font-extrabold tracking-widest text-slate-400">Dashboard</span>
+                <h4 class="text-base font-bold font-serif text-slate-900 dark:text-white">Good morning, YogaSphere</h4>
+              </div>
+            </div>
+            <span class="text-[10px] text-slate-400 dark:text-slate-500 font-mono">Tuesday, May 5</span>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-3 gap-4 mb-6">
+            <div class="border border-slate-100 dark:border-slate-800/80 p-3 rounded-2xl bg-slate-50/30 dark:bg-slate-900/10 hover:scale-[1.05] hover:border-violet-300 dark:hover:border-violet-800 hover:shadow-sm transition-all duration-300 cursor-pointer">
+              <span class="text-[9px] uppercase font-bold tracking-wider text-slate-405">Members</span>
+              <h5 class="text-xl font-bold text-slate-900 dark:text-white mt-1">248</h5>
+            </div>
+            <div class="border border-slate-100 dark:border-slate-800/80 p-3 rounded-2xl bg-slate-50/30 dark:bg-slate-900/10 hover:scale-[1.05] hover:border-violet-300 dark:hover:border-violet-800 hover:shadow-sm transition-all duration-300 cursor-pointer">
+              <span class="text-[9px] uppercase font-bold tracking-wider text-slate-405">Active</span>
+              <h5 class="text-xl font-bold text-violet-600 dark:text-violet-400 mt-1">186</h5>
+            </div>
+            <div class="border border-slate-100 dark:border-slate-800/80 p-3 rounded-2xl bg-slate-50/30 dark:bg-slate-900/10 hover:scale-[1.05] hover:border-violet-300 dark:hover:border-violet-800 hover:shadow-sm transition-all duration-300 cursor-pointer">
+              <span class="text-[9px] uppercase font-bold tracking-wider text-slate-405">Today</span>
+              <h5 class="text-xl font-bold text-slate-900 dark:text-white mt-1">6</h5>
+            </div>
+          </div>
+
+          <!-- Today's Schedule -->
+          <div class="space-y-3 font-sans text-xs">
+            <h5 class="text-[10px] font-extrabold text-slate-400 tracking-wider uppercase mb-2">Today's Schedule</h5>
+            
+            <!-- Class 1 -->
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/50 pb-3 hover:translate-x-2 hover:bg-slate-50/50 dark:hover:bg-slate-900/20 px-2 rounded-xl transition-all duration-300 cursor-pointer">
+              <div class="flex items-center gap-3">
+                <span class="text-xs font-mono text-slate-400">8:30 AM</span>
+                <div>
+                  <h6 class="font-bold text-xs text-slate-900 dark:text-white">Sunrise Vinyasa</h6>
+                  <span class="text-[10px] text-slate-450">Priya Sharma</span>
+                </div>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold">18/20 Booked</span>
+            </div>
+
+            <!-- Class 2 -->
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/50 pb-3 hover:translate-x-2 hover:bg-slate-50/50 dark:hover:bg-slate-900/20 px-2 rounded-xl transition-all duration-300 cursor-pointer">
+              <div class="flex items-center gap-3">
+                <span class="text-xs font-mono text-slate-400">9:30 AM</span>
+                <div>
+                  <h6 class="font-bold text-xs text-slate-900 dark:text-white">Hatha Core Alignment</h6>
+                  <span class="text-[10px] text-slate-450">Arjun Mehta</span>
+                </div>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold">12/15 Booked</span>
+            </div>
+
+            <!-- Class 3 -->
+            <div class="flex items-center justify-between pb-1 hover:translate-x-2 hover:bg-slate-50/50 dark:hover:bg-slate-900/20 px-2 rounded-xl transition-all duration-300 cursor-pointer">
+              <div class="flex items-center gap-3">
+                <span class="text-xs font-mono text-slate-400">12:30 PM</span>
+                <div>
+                  <h6 class="font-bold text-xs text-slate-900 dark:text-white">Lunchtime Yin Stretch</h6>
+                  <span class="text-[10px] text-slate-450">Maya Lin</span>
+                </div>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/30 text-amber-600 dark:text-amber-400 text-[10px] font-bold">8/12 Booked</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Right Floating Card (Members) -->
+        <div class="w-full max-w-[320px] lg:max-w-[340px] xl:max-w-[360px] bg-white dark:bg-[#11131E] rounded-3xl border border-slate-200 dark:border-slate-800/80 shadow-lg p-5 text-left transition-all duration-500 z-30 lg:animate-float-right lg:origin-bottom-left">
+          <!-- Browser top bar -->
+          <div class="flex items-center gap-1.5 pb-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 rounded-t-2xl -mx-5 -mt-5 px-5 pt-3 mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+          </div>
+
+          <!-- Label -->
+          <span class="text-[9px] uppercase font-extrabold tracking-widest text-violet-600 dark:text-violet-400">Roster</span>
+          <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white mt-1 mb-3">Members</h4>
+
+          <!-- Search Input Mock -->
+          <div class="relative mb-4">
+            <i class="bi bi-search absolute left-3 top-2 text-slate-400 text-[10px]"></i>
+            <input type="text" placeholder="Search..." disabled class="w-full pl-8 pr-3 py-1.5 bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800 rounded-xl text-[10px] outline-none text-slate-500 cursor-not-allowed">
+          </div>
+
+          <div class="space-y-3 font-sans text-[11px]">
+            <!-- Member 1 -->
+            <div class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800/80 rounded-2xl bg-slate-50/20 dark:bg-slate-900/10 hover:scale-[1.03] hover:border-violet-300 dark:hover:border-violet-850 hover:shadow-sm transition-all duration-300 cursor-pointer">
+              <div class="space-y-0.5">
+                <h6 class="font-bold text-slate-850 dark:text-white">Sarah Jenkins</h6>
+                <p class="text-[9px] text-slate-400 font-mono">Joined Apr 12</p>
+              </div>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 text-[9px] font-bold">Active</span>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800/80 rounded-2xl bg-slate-50/20 dark:bg-slate-900/10 hover:scale-[1.03] hover:border-violet-300 dark:hover:border-violet-850 hover:shadow-sm transition-all duration-300 cursor-pointer">
+              <div class="space-y-0.5">
+                <h6 class="font-bold text-slate-850 dark:text-white">David Miller</h6>
+                <p class="text-[9px] text-slate-400 font-mono">Joined Mar 04</p>
+              </div>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 text-[9px] font-bold">Active</span>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="flex items-center justify-between p-2 border border-slate-100 dark:border-slate-800/80 rounded-2xl bg-slate-50/20 dark:bg-slate-900/10 hover:scale-[1.03] hover:border-violet-300 dark:hover:border-violet-850 hover:shadow-sm transition-all duration-300 cursor-pointer">
+              <div class="space-y-0.5">
+                <h6 class="font-bold text-slate-850 dark:text-white">Emily Chen</h6>
+                <p class="text-[9px] text-slate-400 font-mono">Joined Feb 18</p>
+              </div>
+              <span class="px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/30 text-amber-600 dark:text-amber-400 text-[9px] font-bold">Paused</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Schedule Preview Section: Split Asymmetric Grid layout -->
+  <section class="py-24 bg-violet-50 dark:bg-slate-900/20 transition-colors">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Informative intro -->
+        <div class="lg:col-span-4 space-y-6 text-left">
+          <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 dark:text-white font-serif leading-tight">Weekly Class Schedule</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+            Find a time that works for you. We offer classes daily from early morning to late evening. Select a practice style to reserve your mat.
+          </p>
+          <a href="classes.html" class="inline-block px-8 py-3.5 bg-violet-600 text-white hover:bg-violet-700 font-bold rounded-2xl transition-all shadow-md">
+            View Full Schedule
+          </a>
+        </div>
+
+        <!-- Right: Schedule Table inside card layout -->
+        <div class="lg:col-span-8 bg-white dark:bg-[#11131E] rounded-3xl border border-slate-205 dark:border-slate-800/80 shadow-xl overflow-hidden border-slate-200/85">
+          <div class="overflow-x-auto">
+            <table class="w-full text-center align-middle border-collapse">
+              <thead>
+                <tr class="bg-violet-600 text-white text-xs font-bold uppercase tracking-wider">
+                  <th class="py-4 px-6">Time</th>
+                  <th class="py-4 px-6">Monday</th>
+                  <th class="py-4 px-6">Tuesday</th>
+                  <th class="py-4 px-6">Wednesday</th>
+                  <th class="py-4 px-6">Thursday</th>
+                  <th class="py-4 px-6">Friday</th>
+                  <th class="py-4 px-6">Weekend</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-lightgrey dark:divide-slate-800 text-xs font-semibold">
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-950/20 transition-colors">
+                  <td class="py-5 px-6 font-bold text-slate-400 dark:text-slate-500">07:00 AM</td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Vinyasa</span><small class="text-slate-400">Sarah</small></td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Hatha</span><small class="text-slate-400">David</small></td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Vinyasa</span><small class="text-slate-400">Sarah</small></td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Yin</span><small class="text-slate-400">Kiran</small></td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Hatha</span><small class="text-slate-400">David</small></td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Meditation</span><small class="text-slate-400">Kiran</small></td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-950/20 transition-colors">
+                  <td class="py-5 px-6 font-bold text-slate-400 dark:text-slate-500">12:00 PM</td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Yin</span><small class="text-slate-400">Kiran</small></td>
+                  <td class="py-5 px-6 text-slate-300 dark:text-slate-700">-</td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Meditation</span><small class="text-slate-400">Sarah</small></td>
+                  <td class="py-5 px-6 text-slate-300 dark:text-slate-700">-</td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Vinyasa</span><small class="text-slate-400">David</small></td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Hatha</span><small class="text-slate-400">Sarah</small></td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-950/20 transition-colors">
+                  <td class="py-5 px-6 font-bold text-slate-400 dark:text-slate-500">06:00 PM</td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Hatha</span><small class="text-slate-400">David</small></td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Vinyasa</span><small class="text-slate-400">Kiran</small></td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Hatha</span><small class="text-slate-400">David</small></td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Vinyasa</span><small class="text-slate-400">Sarah</small></td>
+                  <td class="py-5 px-6"><span class="block font-bold text-violet-600 dark:text-violet-400">Yin</span><small class="text-slate-400">Kiran</small></td>
+                  <td class="py-5 px-6 text-slate-300 dark:text-slate-700">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expert Guides Section -->
+  <section class="py-24 bg-violet-50 dark:bg-slatecharcoal transition-colors">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+        <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 dark:text-white font-serif">Our Expert Guides</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-455">
+          Learn from certified instructors dedicated to helping you deepen your practice.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Guide 1 -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 text-center group shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300">
+          <div class="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 shadow-md border-4 border-violet-50 dark:border-slate-800">
+            <img src="https://i.pinimg.com/736x/71/77/53/7177532a8d5d975bfbb66a4c6645d068.jpg" alt="Sarah Jenkins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <h5 class="text-xl font-bold text-slate-900 dark:text-white font-serif">Sarah Jenkins</h5>
+          <p class="text-violet-600 dark:text-violet-400 font-bold text-xs uppercase tracking-wider mb-2">Vinyasa Specialist</p>
+          <p class="text-xs text-slate-505 dark:text-slate-400 max-w-xs mx-auto leading-relaxed">RYT-500 certified with 10 years of teaching dynamic flows.</p>
+        </div>
+
+        <!-- Guide 2 -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 text-center group shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300">
+          <div class="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 shadow-md border-4 border-violet-50 dark:border-slate-800">
+            <img src="https://i.pinimg.com/736x/86/df/4c/86df4c7f1659b1342abaf21512f3a965.jpg" alt="David Chen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <h5 class="text-xl font-bold text-slate-900 dark:text-white font-serif">David Chen</h5>
+          <p class="text-violet-600 dark:text-violet-400 font-bold text-xs uppercase tracking-wider mb-2">Hatha Master</p>
+          <p class="text-xs text-slate-505 dark:text-slate-400 max-w-xs mx-auto leading-relaxed">Focuses on alignment, breathwork, and foundational strength.</p>
+        </div>
+
+        <!-- Guide 3 -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 text-center group shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300">
+          <div class="w-40 h-40 rounded-full overflow-hidden mx-auto mb-6 shadow-md border-4 border-violet-50 dark:border-slate-800">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Kiran Rani" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <h5 class="text-xl font-bold text-slate-900 dark:text-white font-serif">Kiran Rani</h5>
+          <p class="text-violet-600 dark:text-violet-400 font-bold text-xs uppercase tracking-wider mb-2">Yin & Meditation</p>
+          <p class="text-xs text-slate-505 dark:text-slate-400 max-w-xs mx-auto leading-relaxed">Guides deep restorative practices and mindfulness meditation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="py-20 bg-violet-50 dark:bg-slatecharcoal transition-colors border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Section Title -->
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-violet-600 dark:text-violet-400">YogaSphere Gallery</span>
+        <h2 class="text-3xl md:text-4xl font-bold font-serif text-slate-900 dark:text-white mt-2">Moments of Mindfulness</h2>
+        <p class="text-xs text-slate-500 dark:text-slate-450 mt-2">A visual journey through our sessions, environments, and community.</p>
+      </div>
+
+      <!-- Photo Cards Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        
+        <!-- Photo 1 -->
+        <div class="bg-white dark:bg-[#11131E] p-2.5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_12px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 dark:hover:border-violet-850 transition-all duration-300 group">
+          <div class="aspect-square overflow-hidden rounded-2xl relative">
+            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=350&q=80" alt="Gallery 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute bottom-2.5 left-2.5 px-2.5 py-1 bg-white/90 dark:bg-[#11131E]/90 backdrop-blur-sm rounded-full text-[9px] font-bold text-slate-800 dark:text-white border border-slate-200/50 dark:border-slate-800 shadow-sm">Mindfulness</span>
+          </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="bg-white dark:bg-[#11131E] p-2.5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_12px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 dark:hover:border-violet-850 transition-all duration-300 group">
+          <div class="aspect-square overflow-hidden rounded-2xl relative">
+            <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=350&q=80" alt="Gallery 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute bottom-2.5 left-2.5 px-2.5 py-1 bg-white/90 dark:bg-[#11131E]/90 backdrop-blur-sm rounded-full text-[9px] font-bold text-slate-800 dark:text-white border border-slate-200/50 dark:border-slate-800 shadow-sm">Asana</span>
+          </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="bg-white dark:bg-[#11131E] p-2.5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_12px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 dark:hover:border-violet-850 transition-all duration-300 group">
+          <div class="aspect-square overflow-hidden rounded-2xl relative">
+            <img src="https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?auto=format&fit=crop&w=350&q=80" alt="Gallery 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute bottom-2.5 left-2.5 px-2.5 py-1 bg-white/90 dark:bg-[#11131E]/90 backdrop-blur-sm rounded-full text-[9px] font-bold text-slate-800 dark:text-white border border-slate-200/50 dark:border-slate-800 shadow-sm">Sanctuary</span>
+          </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="bg-white dark:bg-[#11131E] p-2.5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_12px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 dark:hover:border-violet-850 transition-all duration-300 group">
+          <div class="aspect-square overflow-hidden rounded-2xl relative">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=350&q=80" alt="Gallery 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute bottom-2.5 left-2.5 px-2.5 py-1 bg-white/90 dark:bg-[#11131E]/90 backdrop-blur-sm rounded-full text-[9px] font-bold text-slate-800 dark:text-white border border-slate-200/50 dark:border-slate-800 shadow-sm">Journey</span>
+          </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="bg-white dark:bg-[#11131E] p-2.5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_12px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 dark:hover:border-violet-850 transition-all duration-300 group">
+          <div class="aspect-square overflow-hidden rounded-2xl relative">
+            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=350&q=80" alt="Gallery 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute bottom-2.5 left-2.5 px-2.5 py-1 bg-white/90 dark:bg-[#11131E]/90 backdrop-blur-sm rounded-full text-[9px] font-bold text-slate-800 dark:text-white border border-slate-200/50 dark:border-slate-800 shadow-sm">Alignment</span>
+          </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="bg-white dark:bg-[#11131E] p-2.5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_12px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 dark:hover:border-violet-850 transition-all duration-300 group">
+          <div class="aspect-square overflow-hidden rounded-2xl relative">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=350&q=80" alt="Gallery 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute bottom-2.5 left-2.5 px-2.5 py-1 bg-white/90 dark:bg-[#11131E]/90 backdrop-blur-sm rounded-full text-[9px] font-bold text-slate-800 dark:text-white border border-slate-200/50 dark:border-slate-800 shadow-sm">Serenity</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-24 bg-violet-50 dark:bg-slatecharcoal transition-colors">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="bg-violet-605 dark:bg-violet-900/60 bg-violet-600 rounded-[3rem] p-12 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle,white_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-semibold mb-4 relative z-10 font-serif">Start Your Free Trial Today</h2>
+        <p class="text-violet-100 mb-8 max-w-xl mx-auto relative z-10 text-sm md:text-base leading-relaxed">
+          Experience the benefits of regular practice. First 7 days are on us.
+        </p>
+        <div class="relative z-10">
+          <a href="register.html" class="inline-block bg-white text-violet-600 hover:bg-slate-50 px-10 py-4 rounded-2xl font-bold shadow-xl transition-all transform hover:scale-105 text-sm">
+            Join Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership Plans -->
+  <section class="py-24 bg-violet-50 dark:bg-slate-900/10 border-t border-b border-lightgrey dark:border-slate-850/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+        <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 dark:text-white font-serif">Membership Plans</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Choose the plan that best fits your lifestyle.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Basic Plan -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300">
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white mb-2">Basic</h4>
+              <h2 class="text-4xl font-bold font-serif text-slate-900 dark:text-white">$49<span class="text-sm text-slate-400 font-normal font-sans">/mo</span></h2>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+              <li class="flex items-center gap-2"><i class="bi bi-check text-violet-600 dark:text-violet-400 text-lg"></i> 4 Classes per month</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check text-violet-600 dark:text-violet-400 text-lg"></i> Access to lockers</li>
+              <li class="flex items-center gap-2 text-slate-350 dark:text-slate-650"><i class="bi bi-x text-red-505 text-lg"></i> No online library</li>
+            </ul>
+          </div>
+          <div class="pt-8">
+            <a href="register.html?plan=basic" class="block w-full py-3 border-2 border-violet-600 text-violet-600 dark:border-violet-400 dark:text-violet-400 font-bold rounded-2xl text-center hover:bg-violet-600 hover:text-white dark:hover:bg-violet-500 dark:hover:text-slatecharcoal transition-all text-sm">
+              Select Plan
+            </a>
+          </div>
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-3xl border-2 border-violet-650 border-violet-600 flex flex-col justify-between shadow-md hover:shadow-[0_10px_35px_rgba(99,85,183,0.2)] transition-all duration-300 relative">
+          <span class="absolute top-0 start-50 -translate-y-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Most Popular</span>
+          <div class="space-y-6 mt-2">
+            <div>
+              <h4 class="text-xl font-bold font-serif text-violet-600 dark:text-violet-400 mb-2">Standard</h4>
+              <h2 class="text-4xl font-bold font-serif text-violet-600 dark:text-violet-400">$89<span class="text-sm text-slate-400 font-normal font-sans">/mo</span></h2>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+              <li class="flex items-center gap-2"><i class="bi bi-check text-violet-600 dark:text-violet-400 text-lg"></i> 10 Classes per month</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check text-violet-600 dark:text-violet-400 text-lg"></i> Mat storage included</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check text-violet-600 dark:text-violet-400 text-lg"></i> Access to online library</li>
+            </ul>
+          </div>
+          <div class="pt-8">
+            <a href="register.html?plan=standard" class="block w-full py-3.5 bg-violet-600 text-white font-bold rounded-2xl text-center hover:bg-violet-750 transition-all text-sm shadow-md">
+              Select Plan
+            </a>
+          </div>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300">
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-xl font-bold font-serif text-slate-900 dark:text-white mb-2">Premium</h4>
+              <h2 class="text-4xl font-bold font-serif text-slate-900 dark:text-white">$149<span class="text-sm text-slate-400 font-normal font-sans">/mo</span></h2>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-500 dark:text-slate-400">
+              <li class="flex items-center gap-2"><i class="bi bi-check text-violet-600 dark:text-violet-400 text-lg"></i> Unlimited Classes</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check text-violet-600 dark:text-violet-400 text-lg"></i> Premium mat storage</li>
+              <li class="flex items-center gap-2"><i class="bi bi-check text-violet-600 dark:text-violet-400 text-lg"></i> 1 Guest pass per month</li>
+            </ul>
+          </div>
+          <div class="pt-8">
+            <a href="register.html?plan=premium" class="block w-full py-3 border-2 border-violet-600 text-violet-600 dark:border-violet-400 dark:text-violet-400 font-bold rounded-2xl text-center hover:bg-violet-600 hover:text-white dark:hover:bg-violet-500 dark:hover:text-slatecharcoal transition-all text-sm">
+              Select Plan
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-24 bg-violet-50 dark:bg-slatecharcoal transition-colors">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-semibold text-center mb-16 font-serif text-slate-900 dark:text-white">What Our Members Say</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="text-amber-400 text-sm flex gap-1">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-sm text-slate-500 dark:text-slate-405 leading-relaxed italic">
+              "YogaSphere has completely changed my approach to wellness. The instructors are incredibly supportive and the space is so peaceful."
+            </p>
+          </div>
+          <h6 class="font-bold text-slate-900 dark:text-white mt-6">- Emily R.</h6>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="text-amber-400 text-sm flex gap-1">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-sm text-slate-500 dark:text-slate-405 leading-relaxed italic">
+              "I love the variety of classes. Whether I need a tough workout or a restorative session, they have exactly what I need."
+            </p>
+          </div>
+          <h6 class="font-bold text-slate-900 dark:text-white mt-6">- Michael T.</h6>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white dark:bg-[#11131E] p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="text-amber-400 text-sm flex gap-1">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+            </div>
+            <p class="text-sm text-slate-500 dark:text-slate-405 leading-relaxed italic">
+              "The community here is wonderful. It feels like a true sanctuary away from the busyness of everyday life."
+            </p>
+          </div>
+          <h6 class="font-bold text-slate-900 dark:text-white mt-6">- Jessica W.</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Footer Block -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
