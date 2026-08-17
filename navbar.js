@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
           transform translate-x-full transition-transform duration-300 lg:hidden shadow-2xl flex flex-col border-l border-slate-200 dark:border-slate-800">
 
   <div class="flex items-center justify-between p-5 border-b border-slate-200 dark:border-slate-800">
-    <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-serif">Navigation Menu</h2>
+    <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-serif">Menu</h2>
     <button id="closeMenuBtn" class="text-slate-700 dark:text-slate-300 text-3xl hover:text-violet-600 dark:hover:text-violet-400 transition">
       <i class="bi bi-x-lg"></i>
     </button>
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <li>
         <button id="mobileDropdownBtn"
           class="w-full flex items-center justify-between py-2 text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 transition font-semibold">
-          <span>Home Pages</span>
+          <span>Home</span>
           <i id="mobileHomeChevron" class="bi bi-chevron-down"></i>
         </button>
         <ul id="mobileDropdownMenu" class="hidden mt-2 ml-4 space-y-2 border-l border-slate-200 dark:border-slate-800 pl-4">
