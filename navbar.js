@@ -84,12 +84,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- Mobile Sliding Drawer -->
 <div id="mobileMenu"
-  class="fixed top-0 right-0 h-full w-72 bg-[#11131E] text-slate-100 z-50
-          transform translate-x-full transition-transform duration-300 lg:hidden shadow-2xl flex flex-col">
+  class="fixed top-0 right-0 h-full w-72 bg-white dark:bg-[#11131E] text-slate-900 dark:text-slate-100 z-50
+          transform translate-x-full transition-transform duration-300 lg:hidden shadow-2xl flex flex-col border-l border-slate-200 dark:border-slate-800">
 
-  <div class="flex items-center justify-between p-5 border-b border-slate-800">
-    <h2 class="text-xl font-bold text-slate-100">Navigation Menu</h2>
-    <button id="closeMenuBtn" class="text-3xl hover:text-violet-400 transition">
+  <div class="flex items-center justify-between p-5 border-b border-slate-200 dark:border-slate-800">
+    <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-serif">Navigation Menu</h2>
+    <button id="closeMenuBtn" class="text-slate-700 dark:text-slate-300 text-3xl hover:text-violet-600 dark:hover:text-violet-400 transition">
       <i class="bi bi-x-lg"></i>
     </button>
   </div>
@@ -98,32 +98,32 @@ document.addEventListener("DOMContentLoaded", () => {
     <ul class="space-y-4">
       <li>
         <button id="mobileDropdownBtn"
-          class="w-full flex items-center justify-between py-2 hover:text-violet-400 transition font-semibold">
+          class="w-full flex items-center justify-between py-2 text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 transition font-semibold">
           <span>Home Pages</span>
           <i id="mobileHomeChevron" class="bi bi-chevron-down"></i>
         </button>
-        <ul id="mobileDropdownMenu" class="hidden mt-2 ml-4 space-y-2 border-l border-slate-800 pl-4">
-          <li><a href="index.html" class="block py-1 text-sm text-slate-300 hover:text-violet-400">Home 1</a></li>
-          <li><a href="home-2.html" class="block py-1 text-sm text-slate-300 hover:text-violet-400">Home 2</a></li>
+        <ul id="mobileDropdownMenu" class="hidden mt-2 ml-4 space-y-2 border-l border-slate-200 dark:border-slate-800 pl-4">
+          <li><a href="index.html" class="block py-1 text-sm text-slate-605 dark:text-slate-300 hover:text-violet-606 dark:hover:text-violet-400">Home 1</a></li>
+          <li><a href="home-2.html" class="block py-1 text-sm text-slate-605 dark:text-slate-300 hover:text-violet-606 dark:hover:text-violet-400">Home 2</a></li>
         </ul>
       </li>
 
-      <li><a href="about.html" class="block py-2 hover:text-violet-400 transition font-semibold">About</a></li>
-      <li><a href="classes.html" class="block py-2 hover:text-violet-400 transition font-semibold">Classes</a></li>
-      <li><a href="instructors.html" class="block py-2 hover:text-violet-400 transition font-semibold">Instructors</a></li>
-      <li><a href="pricing.html" class="block py-2 hover:text-violet-400 transition font-semibold">Pricing</a></li>
-      <li><a href="blog.html" class="block py-2 hover:text-violet-400 transition font-semibold">Blog</a></li>
-      <li><a href="contact.html" class="block py-2 hover:text-violet-400 transition font-semibold">Contact</a></li>
+      <li><a href="about.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">About</a></li>
+      <li><a href="classes.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Classes</a></li>
+      <li><a href="instructors.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Instructors</a></li>
+      <li><a href="pricing.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Pricing</a></li>
+      <li><a href="blog.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Blog</a></li>
+      <li><a href="contact.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Contact</a></li>
 
-      <li class="pt-6 border-t border-slate-800 space-y-3">
-         <a href="login.html" class="block w-full text-center py-2.5 bg-violet-600 text-white rounded-xl font-bold text-sm shadow-md">Member Login</a>
+      <li class="pt-6 border-t border-slate-200 dark:border-slate-800 space-y-3">
+         <a href="login.html" class="block w-full text-center py-2.5 bg-violet-600 text-white rounded-xl font-bold text-sm shadow-md hover:bg-violet-750 transition">Member Login</a>
       </li>
 
-      <li class="pt-6 border-t border-slate-800 flex justify-around">
-        <button id="mobile-theme-toggle" class="text-2xl hover:text-violet-400 transition" aria-label="Toggle dark mode">
+      <li class="pt-6 border-t border-slate-200 dark:border-slate-800 flex justify-around text-slate-500 dark:text-slate-400">
+        <button id="mobile-theme-toggle" class="text-2xl hover:text-violet-600 dark:hover:text-violet-400 transition" aria-label="Toggle dark mode">
           <i class="bi bi-moon-fill"></i>
         </button>
-        <button id="mobile-rtl-toggle" class="text-2xl hover:text-violet-400 transition" aria-label="Toggle RTL direction">
+        <button id="mobile-rtl-toggle" class="text-2xl hover:text-violet-600 dark:hover:text-violet-400 transition" aria-label="Toggle RTL direction">
           ⇄
         </button>
       </li>

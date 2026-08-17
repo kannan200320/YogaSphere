@@ -217,10 +217,11 @@
             return;
           }
 
-          // Mock registration session setting
+           // Mock registration session setting
           localStorage.setItem("userLoggedIn", "true");
           localStorage.setItem("userRole", "member");
           localStorage.setItem("userEmail", email);
+          localStorage.setItem("userPassword", password);
           localStorage.setItem("userName", name);
           localStorage.setItem("userPlan", plan !== "none" ? plan.charAt(0).toUpperCase() + plan.slice(1) : "Basic");
 

@@ -61,22 +61,26 @@ function initThemeAndAvatar() {
   
   // Theme Toggle Elements
   const themeToggle = document.getElementById("theme-toggle");
+  const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
   const darkSetting = localStorage.getItem("darkModeEnabled");
   
-  if (darkSetting === "true") {
-    htmlEl.classList.add("dark");
-    if (themeToggle) {
-      themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+  const updateThemeUI = (isDark) => {
+    if (isDark) {
+      htmlEl.classList.add("dark");
+      if (themeToggle) themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+      if (mobileThemeToggle) mobileThemeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+    } else {
+      htmlEl.classList.remove("dark");
+      if (themeToggle) themeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
+      if (mobileThemeToggle) mobileThemeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
     }
-  } else {
-    htmlEl.classList.remove("dark");
-    if (themeToggle) {
-      themeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
-    }
-  }
+  };
+  
+  updateThemeUI(darkSetting === "true");
   
   // RTL Toggle Elements
   const langToggle = document.getElementById("lang-toggle");
+  const mobileLangToggle = document.getElementById("mobile-lang-toggle");
   const rtlSetting = localStorage.getItem("rtlEnabled");
 
   if (rtlSetting === "true") {
@@ -86,37 +90,68 @@ function initThemeAndAvatar() {
   }
 
   // Only bind click listeners if we are NOT on a landing page with the public navbar.
-  // Landing pages have their toggle events bound inside navbar.js to prevent double-toggling.
   const hasPublicNavbar = document.getElementById("navbar") !== null;
 
   if (!hasPublicNavbar) {
-    if (themeToggle) {
-      themeToggle.addEventListener("click", () => {
-        const isDark = htmlEl.classList.contains("dark");
-        if (isDark) {
-          htmlEl.classList.remove("dark");
-          themeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
-          localStorage.setItem("darkModeEnabled", "false");
-        } else {
-          htmlEl.classList.add("dark");
-          themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
-          localStorage.setItem("darkModeEnabled", "true");
-        }
-      });
+    const handleThemeClick = () => {
+      const isDark = htmlEl.classList.contains("dark");
+      if (isDark) {
+        updateThemeUI(false);
+        localStorage.setItem("darkModeEnabled", "false");
+      } else {
+        updateThemeUI(true);
+        localStorage.setItem("darkModeEnabled", "true");
+      }
+    };
+    if (themeToggle) themeToggle.addEventListener("click", handleThemeClick);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener("click", handleThemeClick);
+
+    const handleLangClick = () => {
+      const isRTL = htmlEl.dir === "rtl";
+      if (isRTL) {
+        htmlEl.dir = "ltr";
+        localStorage.setItem("rtlEnabled", "false");
+      } else {
+        htmlEl.dir = "rtl";
+        localStorage.setItem("rtlEnabled", "true");
+      }
+    };
+    if (langToggle) langToggle.addEventListener("click", handleLangClick);
+    if (mobileLangToggle) mobileLangToggle.addEventListener("click", handleLangClick);
+  }
+
+  // Mobile sidebar navigation drawer setup
+  const openSidebarBtn = document.getElementById("openSidebarBtn");
+  const closeSidebarBtn = document.getElementById("closeSidebarBtn");
+  const sidebarMenu = document.getElementById("sidebarMenu");
+
+  if (openSidebarBtn && sidebarMenu) {
+    // Dynamic overlay generation
+    let overlay = document.getElementById("sidebarOverlay");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "sidebarOverlay";
+      overlay.className = "fixed inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-sm z-40 hidden transition-opacity duration-300";
+      sidebarMenu.parentNode.insertBefore(overlay, sidebarMenu);
     }
 
-    if (langToggle) {
-      langToggle.addEventListener("click", () => {
-        const isRTL = htmlEl.dir === "rtl";
-        if (isRTL) {
-          htmlEl.dir = "ltr";
-          localStorage.setItem("rtlEnabled", "false");
-        } else {
-          htmlEl.dir = "rtl";
-          localStorage.setItem("rtlEnabled", "true");
-        }
-      });
-    }
+    const openSidebar = () => {
+      sidebarMenu.classList.remove("-translate-x-full");
+      sidebarMenu.classList.add("translate-x-0");
+      overlay.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+    };
+
+    const closeSidebar = () => {
+      sidebarMenu.classList.add("-translate-x-full");
+      sidebarMenu.classList.remove("translate-x-0");
+      overlay.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    };
+
+    openSidebarBtn.addEventListener("click", openSidebar);
+    if (closeSidebarBtn) closeSidebarBtn.addEventListener("click", closeSidebar);
+    overlay.addEventListener("click", closeSidebar);
   }
 
   // Global avatar sync execution

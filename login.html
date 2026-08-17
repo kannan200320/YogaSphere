@@ -177,6 +177,10 @@
           const email = document.getElementById("login-email").value.trim();
           const pass = passInput.value;
 
+          const registeredEmail = localStorage.getItem("userEmail");
+          const registeredPass = localStorage.getItem("userPassword");
+          const registeredName = localStorage.getItem("userName") || "Member";
+
           if (email === "sarah.mitchell@example.com" && pass === "user123") {
             localStorage.setItem("userLoggedIn", "true");
             localStorage.setItem("userRole", "member");
@@ -189,6 +193,12 @@
             localStorage.setItem("userEmail", email);
             localStorage.setItem("userName", "Administrator");
             window.location.href = "admin/dashboard.html";
+          } else if (registeredEmail && email === registeredEmail && registeredPass && pass === registeredPass) {
+            localStorage.setItem("userLoggedIn", "true");
+            localStorage.setItem("userRole", "member");
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userName", registeredName);
+            window.location.href = "dashboard-home.html";
           } else {
             errorText.textContent = "Invalid email address or password combination.";
             errorAlert.classList.remove("hidden");
