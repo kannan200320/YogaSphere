@@ -152,9 +152,6 @@
             </div>
           </div>
 
-          <!-- Alert Notification Box -->
-          <div id="bookNotification" class="hidden p-4 rounded-2xl text-xs font-bold transition-all duration-300"></div>
-
           <!-- Category Filters Bar -->
           <div class="flex flex-wrap gap-2 items-center bg-white dark:bg-[#11131E] p-3 rounded-2xl border border-slate-200 dark:border-slate-800 text-xs font-bold font-sans">
             <button class="filter-btn px-4 py-2 rounded-xl bg-violet-600 text-white transition" data-style-filter="all">All Sessions</button>
@@ -277,17 +274,12 @@
       });
 
       // Booking slots logic
-      const notification = document.getElementById("bookNotification");
-
       window.bookClass = function(className, guide, schedule, duration) {
         let bookings = JSON.parse(localStorage.getItem("userBookings") || "[]");
         
         // Prevent duplicate bookings
         const alreadyBooked = bookings.some(b => b.name === className);
         if (alreadyBooked) {
-          notification.className = "p-4 rounded-2xl text-xs font-bold bg-amber-500 text-white mb-4";
-          notification.innerHTML = `<i class="bi bi-exclamation-triangle-fill mr-1"></i> You have already booked the ${className} class.`;
-          notification.classList.remove("hidden");
           if (typeof window.showToast === "function") {
             window.showToast(`Already booked ${className}.`, 3000, "warning");
           }
@@ -298,17 +290,9 @@
         bookings.push({ id: newId, name: className, guide: guide, schedule: schedule, duration: duration });
         localStorage.setItem("userBookings", JSON.stringify(bookings));
 
-        notification.className = "p-4 rounded-2xl text-xs font-bold bg-green-600 text-white mb-4";
-        notification.innerHTML = `<i class="bi bi-check-circle-fill mr-1"></i> Reservation confirmed! Booked ${className} successfully.`;
-        notification.classList.remove("hidden");
-
         if (typeof window.showToast === "function") {
           window.showToast(`Reservation confirmed! Booked ${className} successfully.`);
         }
-
-        setTimeout(() => {
-          notification.classList.add("hidden");
-        }, 4000);
       };
 
       // Waitlist simulation toggler
@@ -317,27 +301,17 @@
           button.textContent = "Joined Waitlist";
           button.className = "flex-1 py-2.5 bg-mediumgrey text-white font-bold rounded-xl transition-all text-xs";
           
-          notification.className = "p-4 rounded-2xl text-xs font-bold bg-green-600 text-white mb-4";
-          notification.innerHTML = '<i class="bi bi-check-circle-fill mr-1"></i> You have joined the Somatic Meditation waitlist.';
-          notification.classList.remove("hidden");
           if (typeof window.showToast === "function") {
             window.showToast("You have joined the waitlist.");
           }
         } else {
           button.textContent = "Join Waitlist";
-          button.className = "flex-1 py-2.5 border-2 border-violet-600 text-violet-605 dark:border-violet-400 dark:text-violet-400 font-bold rounded-xl transition-all text-xs";
+          button.className = "flex-1 py-2.5 border-2 border-violet-600 text-violet-600 dark:border-violet-405 dark:text-violet-405 font-bold rounded-xl transition-all text-xs";
           
-          notification.className = "p-4 rounded-2xl text-xs font-bold bg-red-600 text-white mb-4";
-          notification.innerHTML = '<i class="bi bi-check-circle-fill mr-1"></i> Removed from waitlist.';
-          notification.classList.remove("hidden");
           if (typeof window.showToast === "function") {
             window.showToast("Removed from waitlist.", 3000, "warning");
           }
         }
-
-        setTimeout(() => {
-          notification.classList.add("hidden");
-        }, 4000);
       };
 
       // Hide skeleton after 600ms
