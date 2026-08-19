@@ -192,8 +192,6 @@
           <div class="bg-white dark:bg-[#11131E] rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 space-y-6 hover:shadow-[0_10px_25px_rgba(99,85,183,0.15)] hover:border-violet-300 transition-all duration-300">
             <h4 class="text-lg font-bold font-serif text-slate-900 dark:text-white border-b border-lightgrey dark:border-slate-800 pb-3">Your Booked Classes</h4>
             
-            <div id="bookingNotification" class="hidden p-4 rounded-2xl text-xs font-bold"></div>
-
             <div class="overflow-x-auto">
               <table class="w-full text-left border-collapse text-xs">
                 <thead>
@@ -253,7 +251,6 @@
 
       const tableBody = document.getElementById("bookingTableBody");
       const statBookings = document.getElementById("statActiveBookings");
-      const notification = document.getElementById("bookingNotification");
 
       function renderBookings() {
         tableBody.innerHTML = "";
@@ -292,15 +289,11 @@
           bookings = bookings.filter(b => b.id !== id);
           localStorage.setItem("userBookings", JSON.stringify(bookings));
           
-          notification.className = "p-4 rounded-2xl text-xs font-bold bg-green-605 text-white mb-4 bg-green-600";
-          notification.innerHTML = '<i class="bi bi-check-circle-fill mr-1"></i> Class reservation cancelled successfully.';
-          notification.classList.remove("hidden");
+          if (typeof window.showToast === "function") {
+            window.showToast("Class reservation cancelled successfully.");
+          }
 
           renderBookings();
-
-          setTimeout(() => {
-            notification.classList.add("hidden");
-          }, 3000);
         });
       };
 
