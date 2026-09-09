@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <h1 class="text-2xl font-bold text-violet-600 dark:text-violet-400">
           <a href="index.html" class="flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-violet-600 dark:text-violet-400"><path d="M12 3a9 9 0 0 0-9 9v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4v-2a8 8 0 0 1 16 0v2h-3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7a9 9 0 0 0-9-9z"></path></svg>
-            <span class="tracking-tight text-violet-605 dark:text-violet-400">Yoga<span class="font-normal text-black dark:text-slate-400">Sphere</span></span>
+            <span class="tracking-tight text-violet-600 dark:text-violet-400">Yoga<span class="font-normal text-black dark:text-slate-400">Sphere</span></span>
           </a>
         </h1>
         <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-sans">

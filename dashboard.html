@@ -221,17 +221,22 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // Load user profile details
-      const userLoggedIn = localStorage.getItem("userLoggedIn");
-      const userRole = localStorage.getItem("userRole");
-      const name = localStorage.getItem("userName") || "Sarah Mitchell";
-      const email = localStorage.getItem("userEmail") || "sarah.mitchell@example.com";
-      const plan = localStorage.getItem("userPlan") || "Standard";
+      let userLoggedIn = localStorage.getItem("userLoggedIn");
+      let userRole = localStorage.getItem("userRole");
 
-      // Redirect if not signed in or not standard user
+      // Auto-initialize demo member session if directly visited
       if (userLoggedIn !== "true" || userRole !== "member") {
-        window.location.href = "login.html";
-        return;
+        userLoggedIn = "true";
+        userRole = "member";
+        localStorage.setItem("userLoggedIn", "true");
+        localStorage.setItem("userRole", "member");
+        if (!localStorage.getItem("userName")) localStorage.setItem("userName", "Sarah Mitchell");
+        if (!localStorage.getItem("userEmail")) localStorage.setItem("userEmail", "sarah.mitchell@example.com");
+        if (!localStorage.getItem("userPlan")) localStorage.setItem("userPlan", "Standard");
       }
+
+      const name = localStorage.getItem("userName") || "Sarah Mitchell";
+      const plan = localStorage.getItem("userPlan") || "Standard";
 
       // Display user info
       document.getElementById("userHeaderName").textContent = name;

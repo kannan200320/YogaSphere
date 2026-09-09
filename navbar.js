@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <h1 class="text-2xl font-bold text-violet-600 dark:text-violet-400">
       <a href="index.html" class="flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-violet-600 dark:text-violet-400"><path d="M12 3a9 9 0 0 0-9 9v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4v-2a8 8 0 0 1 16 0v2h-3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7a9 9 0 0 0-9-9z"></path></svg>
-        <span class="tracking-tight text-violet-605 dark:text-violet-400">Yoga<span class="font-normal text-black dark:text-slate-400">Sphere</span></span>
+        <span class="tracking-tight text-violet-600 dark:text-violet-400">Yoga<span class="font-normal text-black dark:text-slate-400">Sphere</span></span>
       </a>
     </h1>
 
@@ -62,8 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <!-- Member Portal Redirections -->
       <div class="flex items-center gap-3 ml-2">
+        <a href="dashboard.html" 
+           class="h-10 px-5 rounded-xl border-2 border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 font-semibold text-sm transition-all hover:bg-violet-600 hover:text-white dark:hover:bg-violet-500 dark:hover:text-white shadow-sm inline-flex items-center justify-center">
+           Dashboard
+        </a>
         <a href="login.html" 
-           class="px-5 py-2.5 rounded-xl bg-violet-600 dark:bg-violet-500 text-white font-semibold text-sm transition hover:bg-violet-750 dark:hover:bg-violet-450 shadow-md">
+           class="h-10 px-5 rounded-xl bg-violet-600 hover:bg-violet-750 dark:bg-violet-500 dark:hover:bg-violet-600 text-white font-semibold text-sm transition-all shadow-md inline-flex items-center justify-center">
            Member Login
         </a>
       </div>
@@ -116,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <li><a href="contact.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Contact</a></li>
 
       <li class="pt-6 border-t border-slate-200 dark:border-slate-800 space-y-3">
+         <a href="dashboard.html" class="block w-full text-center py-2.5 border-2 border-violet-600 text-violet-600 dark:border-violet-400 dark:text-violet-400 rounded-xl font-bold text-sm transition hover:bg-violet-50 dark:hover:bg-violet-950/30">Dashboard</a>
          <a href="login.html" class="block w-full text-center py-2.5 bg-violet-600 text-white rounded-xl font-bold text-sm shadow-md hover:bg-violet-750 transition">Member Login</a>
       </li>
 

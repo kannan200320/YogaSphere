@@ -56,13 +56,39 @@
   <!-- Dynamic Navigation Bar -->
   <div id="navbar"></div>
 
-  <!-- Page Banner -->
-  <section class="pt-36 pb-20 bg-violet-50 dark:bg-slate-950/20 text-center transition-colors">
-    <div class="max-w-7xl mx-auto px-6">
-      <h1 class="text-4xl md:text-5xl font-semibold text-slate-900 dark:text-white font-serif">Membership Plans</h1>
-      <p class="text-slate-500 dark:text-slate-400 mt-2 font-sans text-base max-w-lg mx-auto leading-relaxed">
-        Choose the plan that best fits your lifestyle.
-      </p>
+  <!-- Page Banner / Hero Section -->
+  <section class="pt-36 pb-20 bg-violet-50 dark:bg-slate-950/20 transition-colors relative overflow-hidden">
+    <!-- Ambient glow -->
+    <div class="absolute top-[-10%] right-[-5%] w-[450px] h-[450px] bg-violet-100/50 dark:bg-violet-950/10 rounded-full blur-[120px] opacity-70 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Left text info -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded-full text-xs font-bold uppercase tracking-wider font-sans">
+            <i class="bi bi-tag-fill"></i> Transparent Pricing
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 dark:text-white font-serif leading-[1.15]">
+            Invest in Your <br>
+            <span class="text-violet-600 dark:text-violet-400 italic font-normal">Health &amp; Harmony</span>
+          </h1>
+          <p class="text-slate-600 dark:text-slate-300 font-sans text-base md:text-lg leading-relaxed max-w-xl">
+            Flexible passes and recurring memberships with zero hidden registration fees. Enjoy full access to all studio locations, mat towels, and online libraries.
+          </p>
+          <div class="flex flex-wrap items-center gap-6 pt-2 text-xs font-bold text-slate-600 dark:text-slate-400 font-sans">
+            <span class="flex items-center gap-2"><i class="bi bi-check2-circle text-violet-600 dark:text-violet-400 text-base"></i> 7-Day Free Trial</span>
+            <span class="flex items-center gap-2"><i class="bi bi-arrow-repeat text-violet-600 dark:text-violet-400 text-base"></i> Cancel Anytime</span>
+            <span class="flex items-center gap-2"><i class="bi bi-shield-check text-violet-600 dark:text-violet-400 text-base"></i> No Hidden Fees</span>
+          </div>
+        </div>
+
+        <!-- Right image card -->
+        <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-md aspect-[4/3] md:aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 transition-all duration-300">
+            <img src="https://i.pinimg.com/1200x/eb/ab/31/ebab3143509685e79e3b04cfe93b133e.jpg" alt="Tranquil wellness setting" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
