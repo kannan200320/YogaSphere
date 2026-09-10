@@ -1,10 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
+/**
+ * YogaSphere - Navigation Bar Handler
+ * Initializes desktop & mobile navigation, dropdowns, theme toggles, and active state.
+ */
+
+function initNavbar() {
   const navbar = document.getElementById("navbar");
   if (!navbar) return;
 
-  navbar.innerHTML = `
+  // Fallback: If navbar markup is not statically embedded, inject it
+  if (!document.getElementById("mainNavbar")) {
+    navbar.innerHTML = `
 <header id="mainNavbar"
-  class="fixed top-0 left-0 w-full z-50 bg-white/85 text-slate-900 dark:bg-[#090A0F]/85 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800/80 backdrop-blur-md transition-all duration-300">
+  class="fixed top-0 left-0 w-full z-50 bg-white/85 text-slate-900 dark:bg-[#090A0F]/85 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800/80 backdrop-blur-md transition-colors duration-200">
 
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
@@ -47,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>
     </div>
 
-    <!-- Actions & Right Buttons -->
+    <!-- Actions & Right Buttons (Desktop) -->
     <div id="rightButtons" class="hidden lg:flex items-center gap-5">
       
       <!-- Theme Switcher Button -->
@@ -73,11 +80,24 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
 
-    <!-- Mobile Hamburger Button -->
-    <button id="hamburgerBtn"
-      class="lg:hidden text-3xl text-violet-600 dark:text-violet-400 hover:text-violet-500 transition" aria-label="Toggle mobile menu">
-      <i class="bi bi-list"></i>
-    </button>
+    <!-- Mobile Header Controls (Visible on mobile < lg) -->
+    <div class="flex items-center gap-2 lg:hidden">
+      <!-- Mobile Theme Switcher -->
+      <button id="mobile-top-theme-toggle" class="w-10 h-10 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 hover:bg-violet-50 dark:hover:bg-slate-800 transition text-lg" aria-label="Toggle dark mode">
+        <i class="bi bi-moon-fill"></i>
+      </button>
+
+      <!-- Mobile RTL Switcher -->
+      <button id="mobile-top-rtl-toggle" class="w-10 h-10 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 hover:bg-violet-50 dark:hover:bg-slate-800 transition font-bold text-lg" aria-label="Toggle layout direction">
+        ⇄
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="hamburgerBtn"
+        class="w-10 h-10 rounded-xl flex items-center justify-center text-2xl text-violet-600 dark:text-violet-400 hover:bg-violet-50 dark:hover:bg-slate-800 transition ml-0.5" aria-label="Toggle mobile menu">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
 
   </div>
 </header>
@@ -93,9 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <div class="flex items-center justify-between p-5 border-b border-slate-200 dark:border-slate-800">
     <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-serif">Menu</h2>
-    <button id="closeMenuBtn" class="text-slate-700 dark:text-slate-300 text-3xl hover:text-violet-600 dark:hover:text-violet-400 transition">
-      <i class="bi bi-x-lg"></i>
-    </button>
+    <div class="flex items-center">
+      <button id="closeMenuBtn" class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-300 text-xl hover:text-violet-600 dark:hover:text-violet-400 hover:bg-violet-50 dark:hover:bg-slate-800 transition" aria-label="Close menu">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
   </div>
 
   <div class="p-6 overflow-y-auto flex-grow">
@@ -107,45 +129,37 @@ document.addEventListener("DOMContentLoaded", () => {
           <i id="mobileHomeChevron" class="bi bi-chevron-down"></i>
         </button>
         <ul id="mobileDropdownMenu" class="hidden mt-2 ml-4 space-y-2 border-l border-slate-200 dark:border-slate-800 pl-4">
-          <li><a href="index.html" class="block py-1 text-sm text-slate-605 dark:text-slate-300 hover:text-violet-606 dark:hover:text-violet-400">Home 1</a></li>
-          <li><a href="home-2.html" class="block py-1 text-sm text-slate-605 dark:text-slate-300 hover:text-violet-606 dark:hover:text-violet-400">Home 2</a></li>
+          <li><a href="index.html" class="block py-1 text-sm text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400">Home 1</a></li>
+          <li><a href="home-2.html" class="block py-1 text-sm text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400">Home 2</a></li>
         </ul>
       </li>
 
-      <li><a href="about.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">About</a></li>
-      <li><a href="classes.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Classes</a></li>
-      <li><a href="instructors.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Instructors</a></li>
-      <li><a href="pricing.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Pricing</a></li>
-      <li><a href="blog.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Blog</a></li>
-      <li><a href="contact.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-606 dark:hover:text-violet-400 transition font-semibold">Contact</a></li>
+      <li><a href="about.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 transition font-semibold">About</a></li>
+      <li><a href="classes.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 transition font-semibold">Classes</a></li>
+      <li><a href="instructors.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 transition font-semibold">Instructors</a></li>
+      <li><a href="pricing.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 transition font-semibold">Pricing</a></li>
+      <li><a href="blog.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 transition font-semibold">Blog</a></li>
+      <li><a href="contact.html" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 transition font-semibold">Contact</a></li>
 
       <li class="pt-6 border-t border-slate-200 dark:border-slate-800 space-y-3">
          <a href="dashboard.html" class="block w-full text-center py-2.5 border-2 border-violet-600 text-violet-600 dark:border-violet-400 dark:text-violet-400 rounded-xl font-bold text-sm transition hover:bg-violet-50 dark:hover:bg-violet-950/30">Dashboard</a>
          <a href="login.html" class="block w-full text-center py-2.5 bg-violet-600 text-white rounded-xl font-bold text-sm shadow-md hover:bg-violet-750 transition">Member Login</a>
       </li>
-
-      <li class="pt-6 border-t border-slate-200 dark:border-slate-800 flex justify-around text-slate-500 dark:text-slate-400">
-        <button id="mobile-theme-toggle" class="text-2xl hover:text-violet-600 dark:hover:text-violet-400 transition" aria-label="Toggle dark mode">
-          <i class="bi bi-moon-fill"></i>
-        </button>
-        <button id="mobile-rtl-toggle" class="text-2xl hover:text-violet-600 dark:hover:text-violet-400 transition" aria-label="Toggle RTL direction">
-          ⇄
-        </button>
-      </li>
     </ul>
   </div>
 </div>
 `;
+  }
 
   // Desktop Dropdown Events (Click trigger)
   const homeDropdownBtn = document.getElementById("homeDropdownBtn");
   const homeDropdownMenu = document.getElementById("homeDropdownMenu");
 
-  if (homeDropdownBtn) {
-    homeDropdownBtn.addEventListener("click", (e) => {
+  if (homeDropdownBtn && homeDropdownMenu) {
+    homeDropdownBtn.onclick = (e) => {
       e.stopPropagation();
       homeDropdownMenu.classList.toggle("hidden");
-    });
+    };
     
     document.addEventListener("click", (e) => {
       if (!homeDropdownBtn.contains(e.target) && !homeDropdownMenu.contains(e.target)) {
@@ -162,67 +176,92 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
   function toggleMobileMenu() {
+    if (!mobileMenu || !mobileMenuOverlay) return;
     mobileMenu.classList.toggle('translate-x-full');
     mobileMenuOverlay.classList.toggle('hidden');
     body.classList.toggle('overflow-hidden');
   }
 
-  if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleMobileMenu);
-  if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMobileMenu);
-  if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+  if (hamburgerBtn) hamburgerBtn.onclick = toggleMobileMenu;
+  if (closeMenuBtn) closeMenuBtn.onclick = toggleMobileMenu;
+  if (mobileMenuOverlay) mobileMenuOverlay.onclick = toggleMobileMenu;
 
   // Mobile Dropdown toggler
   const mobileDropdownBtn = document.getElementById('mobileDropdownBtn');
   const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
   const mobileHomeChevron = document.getElementById('mobileHomeChevron');
 
-  if (mobileDropdownBtn) {
-    mobileDropdownBtn.addEventListener('click', (e) => {
+  if (mobileDropdownBtn && mobileDropdownMenu) {
+    mobileDropdownBtn.onclick = (e) => {
       e.stopPropagation();
       mobileDropdownMenu.classList.toggle('hidden');
-      mobileHomeChevron.classList.toggle('rotate-180');
-    });
+      if (mobileHomeChevron) mobileHomeChevron.classList.toggle('rotate-180');
+    };
   }
 
-  // Global Theme Toggler (Desktop & Mobile)
-  const toggleBtn = document.getElementById("theme-toggle");
-  const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
+  // Brand Favicon Synchronizer
+  function updateBrandFavicon(isDark) {
+    try {
+      const canvas = document.createElement('canvas');
+      canvas.width = 64;
+      canvas.height = 64;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const scale = (64 - 16) / 24;
+      ctx.translate(8, 8);
+      ctx.scale(scale, scale);
+
+      const path = new Path2D('M12 3a9 9 0 0 0-9 9v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4v-2a8 8 0 0 1 16 0v2h-3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7a9 9 0 0 0-9-9z');
+      ctx.lineWidth = 2.2;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = isDark ? '#A78BFA' : '#7C3AED';
+      ctx.stroke(path);
+
+      const dataUrl = canvas.toDataURL('image/png');
+      const iconLinks = document.querySelectorAll("link[rel~='icon']");
+      if (iconLinks.length > 0) {
+        iconLinks.forEach(link => {
+          link.href = dataUrl;
+          link.type = 'image/png';
+        });
+      }
+    } catch (e) {}
+  }
+
+  // Global Theme Toggler (Desktop & Mobile Top Navbar)
+  const themeToggleBtns = document.querySelectorAll("#theme-toggle, #mobile-top-theme-toggle");
   
   function applyTheme(isDark) {
     if (isDark) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("darkModeEnabled", "true");
-      if (toggleBtn) toggleBtn.innerHTML = `<i class="bi bi-sun-fill"></i>`;
-      if (mobileThemeToggle) mobileThemeToggle.innerHTML = `<i class="bi bi-sun-fill"></i>`;
+      themeToggleBtns.forEach(btn => {
+        btn.innerHTML = `<i class="bi bi-sun-fill"></i>`;
+      });
     } else {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("darkModeEnabled", "false");
-      if (toggleBtn) toggleBtn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
-      if (mobileThemeToggle) mobileThemeToggle.innerHTML = `<i class="bi bi-moon-fill"></i>`;
+      themeToggleBtns.forEach(btn => {
+        btn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
+      });
     }
+    updateBrandFavicon(isDark);
   }
 
-  // Load Saved Preference
   const savedTheme = localStorage.getItem("darkModeEnabled") === "true";
   applyTheme(savedTheme);
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
+  themeToggleBtns.forEach(btn => {
+    btn.onclick = () => {
       const isDark = document.documentElement.classList.contains("dark");
       applyTheme(!isDark);
-    });
-  }
+    };
+  });
 
-  if (mobileThemeToggle) {
-    mobileThemeToggle.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.contains("dark");
-      applyTheme(!isDark);
-    });
-  }
-
-  // Global LTR / RTL Direction Toggler
-  const rtlToggle = document.getElementById("rtlToggle");
-  const mobileRtlToggle = document.getElementById("mobile-rtl-toggle");
+  // Global LTR / RTL Direction Toggler (Desktop & Mobile Top Navbar)
+  const rtlToggleBtns = document.querySelectorAll("#rtlToggle, #mobile-top-rtl-toggle");
 
   function applyDirection(isRTL) {
     document.documentElement.dir = isRTL ? "rtl" : "ltr";
@@ -232,19 +271,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedDir = localStorage.getItem("rtlEnabled") === "true";
   applyDirection(savedDir);
 
-  if (rtlToggle) {
-    rtlToggle.addEventListener("click", () => {
+  rtlToggleBtns.forEach(btn => {
+    btn.onclick = () => {
       const isRTL = document.documentElement.dir === "rtl";
       applyDirection(!isRTL);
-    });
-  }
-
-  if (mobileRtlToggle) {
-    mobileRtlToggle.addEventListener("click", () => {
-      const isRTL = document.documentElement.dir === "rtl";
-      applyDirection(!isRTL);
-    });
-  }
+    };
+  });
 
   // Active Link Tracking classes
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
@@ -256,4 +288,11 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("text-violet-600", "dark:text-violet-400", "font-bold");
     }
   });
-});
+}
+
+// Execute immediately if DOM ready, or on DOMContentLoaded
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initNavbar);
+} else {
+  initNavbar();
+}

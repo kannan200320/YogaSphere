@@ -64,6 +64,37 @@ function initThemeAndAvatar() {
   const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
   const darkSetting = localStorage.getItem("darkModeEnabled");
   
+  // Synchronize browser tab favicon with navbar headphone brand logo
+  const syncBrandFavicon = (isDark) => {
+    try {
+      const canvas = document.createElement('canvas');
+      canvas.width = 64;
+      canvas.height = 64;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const scale = (64 - 16) / 24;
+      ctx.translate(8, 8);
+      ctx.scale(scale, scale);
+
+      const path = new Path2D('M12 3a9 9 0 0 0-9 9v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4v-2a8 8 0 0 1 16 0v2h-3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7a9 9 0 0 0-9-9z');
+      ctx.lineWidth = 2.2;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = isDark ? '#A78BFA' : '#7C3AED';
+      ctx.stroke(path);
+
+      const dataUrl = canvas.toDataURL('image/png');
+      const iconLinks = document.querySelectorAll("link[rel~='icon']");
+      if (iconLinks.length > 0) {
+        iconLinks.forEach(link => {
+          link.href = dataUrl;
+          link.type = 'image/png';
+        });
+      }
+    } catch (e) {}
+  };
+
   const updateThemeUI = (isDark) => {
     if (isDark) {
       htmlEl.classList.add("dark");
@@ -74,6 +105,7 @@ function initThemeAndAvatar() {
       if (themeToggle) themeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
       if (mobileThemeToggle) mobileThemeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
     }
+    syncBrandFavicon(isDark);
   };
   
   updateThemeUI(darkSetting === "true");
