@@ -114,7 +114,7 @@
           <a href="#" class="text-slate-500 hover:text-violet-600 dark:hover:text-violet-400 font-semibold">Forgot Password?</a>
         </div>
         
-        <button type="submit" class="w-full py-3.5 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-xl shadow-md transition-all text-xs uppercase tracking-wider">
+        <button type="button" id="loginSubmitBtn" class="w-full py-3.5 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-xl shadow-md transition-all text-xs uppercase tracking-wider">
           Sign In
         </button>
       </form>
@@ -150,10 +150,9 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const loginForm = document.getElementById("loginForm");
-      const errorAlert = document.getElementById("login-error-alert");
-      const errorText = document.getElementById("login-error-text");
       const togglePassBtn = document.getElementById("togglePassBtn");
       const passInput = document.getElementById("login-password");
+      const loginSubmitBtn = document.getElementById("loginSubmitBtn");
       // Theme and RTL toggles are handled globally by main.js
 
       // Eye toggle password script
@@ -169,41 +168,16 @@
         });
       }
 
-      // Credentials submit checks
+      // Dummy submit handler - strictly dummy, does not redirect to dashboard or any pages
       if (loginForm) {
         loginForm.addEventListener("submit", (e) => {
           e.preventDefault();
-          errorAlert.classList.add("hidden");
+        });
+      }
 
-          const email = document.getElementById("login-email").value.trim();
-          const pass = passInput.value;
-
-          const registeredEmail = localStorage.getItem("userEmail");
-          const registeredPass = localStorage.getItem("userPassword");
-          const registeredName = localStorage.getItem("userName") || "Member";
-
-          if (email === "sarah.mitchell@example.com" && pass === "user123") {
-            localStorage.setItem("userLoggedIn", "true");
-            localStorage.setItem("userRole", "member");
-            localStorage.setItem("userEmail", email);
-            localStorage.setItem("userName", "Sarah Mitchell");
-            window.location.href = "dashboard.html";
-          } else if (email === "admin@yogasphere.com" && pass === "admin123") {
-            localStorage.setItem("userLoggedIn", "true");
-            localStorage.setItem("userRole", "admin");
-            localStorage.setItem("userEmail", email);
-            localStorage.setItem("userName", "Administrator");
-            window.location.href = "admin/dashboard.html";
-          } else if (registeredEmail && email === registeredEmail && registeredPass && pass === registeredPass) {
-            localStorage.setItem("userLoggedIn", "true");
-            localStorage.setItem("userRole", "member");
-            localStorage.setItem("userEmail", email);
-            localStorage.setItem("userName", registeredName);
-            window.location.href = "dashboard.html";
-          } else {
-            errorText.textContent = "Invalid email address or password combination.";
-            errorAlert.classList.remove("hidden");
-          }
+      if (loginSubmitBtn) {
+        loginSubmitBtn.addEventListener("click", (e) => {
+          e.preventDefault();
         });
       }
     });
